@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HCKTCR | Gray Hat Hacker & Cybersecurity Expert</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        /* Custom animations */
+
+        @keyframes terminalCursor {
+
+            0%, 100% { opacity: 0; }
+
+            50% { opacity: 1; }
+
+        }
+
+        
+
+        .terminal-cursor {
+
+            animation: terminalCursor 1s infinite;
+
+        }
+
+        
+
+        /* Custom scrollbar */
+
+        ::-webkit-scrollbar {
+
+            width: 8px;
+
+        }
+
+        
+
+        ::-webkit-scrollbar-track {
+
+            background: #1a202c;
+
+        }
+
+        
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #4a5568;
+
+            border-radius: 4px;
+
+        }
+
+        
+
+        ::-webkit-scrollbar-thumb:hover {
+
+            background: #718096;
+
+        }
+
+        
+
+        /* Glow effect for hacker elements */
+
+        .glow {
+
+            text-shadow: 0 0 8px rgba(59, 130, 246, 0.7);
+
+        }
+
+        
+
+        .glow-box {
+
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+
+        }
+
+        
+
+        /* Matrix rain effect container */
+
+        #matrix {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            z-index: -1;
+
+            opacity: 0.1;
+
+            pointer-events: none;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-mono">
+
+    <!-- Matrix rain effect -->
+
+    <canvas id="matrix"></canvas>
+
+    
+
+    <!-- Header/Navigation -->
+
+    <header class="fixed w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 border-b border-gray-800">
+
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+
+            <div class="flex items-center space-x-2">
+
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+
+                <a href="#" class="ml-2 text-xl font-bold glow">HCKTCR_</a>
+
+            </div>
+
+            
+
+            <nav class="hidden md:block">
+
+                <ul class="flex space-x-8">
+
+                    <li><a href="#about" class="hover:text-blue-400 transition">[About]</a></li>
+
+                    <li><a href="#skills" class="hover:text-blue-400 transition">[Skills]</a></li>
+
+                    <li><a href="#projects" class="hover:text-blue-400 transition">[Projects]</a></li>
+
+                    <li><a href="#contact" class="hover:text-blue-400 transition">[Contact]</a></li>
+
+                </ul>
+
+            </nav>
+
+            
+
+            <button id="mobile-menu-button" class="md:hidden text-xl">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+        </div>
+
+        
+
+        <!-- Mobile menu -->
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+
+            <ul class="flex flex-col space-y-4 p-4">
+
+                <li><a href="#about" class="block hover:text-blue-400 transition">[About]</a></li>
+
+                <li><a href="#skills" class="block hover:text-blue-400 transition">[Skills]</a></li>
+
+                <li><a href="#projects" class="block hover:text-blue-400 transition">[Projects]</a></li>
+
+                <li><a href="#contact" class="block hover:text-blue-400 transition">[Contact]</a></li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+    
+
+    <!-- Hero Section -->
+
+    <section class="min-h-screen flex items-center pt-16">
+
+        <div class="container mx-auto px-4 py-20">
+
+            <div class="max-w-3xl mx-auto text-center">
+
+                <div class="inline-block px-4 py-2 mb-6 bg-gray-800 rounded-lg glow-box">
+
+                    <span class="text-blue-400">Gray Hat Hacker & Cybersecurity Expert</span>
+
+                </div>
+
+                
+
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 glow">
+
+                    <span class="text-blue-400">$</span> Hello, I'm <span class="text-blue-400">HCKTCR</span>
+
+                </h1>
+
+                
+
+                <div class="terminal-container bg-gray-800 rounded-lg p-6 text-left mb-8 glow-box">
+
+                    <div class="terminal-header flex items-center mb-4">
+
+                        <div class="flex space-x-2 mr-4">
+
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+
+                        </div>
+
+                        <span class="text-gray-400">terminal</span>
+
+                    </div>
+
+                    <div class="terminal-content">
+
+                        <p class="mb-2"><span class="text-green-400">user@system:~$</span> whois HCKTCR</p>
+
+                        <p class="mb-2"><span class="text-blue-400">HCKTCR:</span> Ethical hacker | Security researcher | Penetration tester</p>
+
+                        <p class="mb-2"><span class="text-green-400">user@system:~$</span> locate skills</p>
+
+                        <p class="mb-2"><span class="text-blue-400">Results:</span> Vulnerability assessment | Exploit development | Red teaming | Security auditing</p>
+
+                        <p class="mb-2"><span class="text-green-400">user@system:~$</span> <span id="typing-text"></span><span class="terminal-cursor">|</span></p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="flex justify-center space-x-4">
+
+                    <a href="#contact" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold transition glow-box">Hire Me</a>
+
+                    <a href="#projects" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition glow-box">My Work</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- About Section -->
+
+    <section id="about" class="py-20 bg-gray-800">
+
+        <div class="container mx-auto px-4">
+
+            <h2 class="text-3xl font-bold mb-12 text-center glow">
+
+                <span class="text-blue-400">#</span> About Me
+
+            </h2>
+
+            
+
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+
+                <div class="lg:w-1/3">
+
+                    <div class="relative glow-box rounded-lg overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+
+                             alt="HCKTCR" class="w-full h-auto">
+
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="lg:w-2/3">
+
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">The Gray Hat Philosophy</h3>
+
+                    <p class="mb-6 text-gray-300">
+
+                        I operate in the gray zone between black and white hat hacking, uncovering vulnerabilities before malicious actors can exploit them.
+
+                        My approach combines the technical prowess of a black hat with the ethical compass of a white hat, delivering comprehensive security
+
+                        solutions that protect while pushing boundaries.
+
+                    </p>
+
+                    
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+                        <div class="bg-gray-900 p-6 rounded-lg glow-box">
+
+                            <div class="flex items-center mb-3">
+
+                                <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+
+                                <h4 class="font-bold">Ethical Approach</h4>
+
+                            </div>
+
+                            <p class="text-gray-300">
+
+                                All security research is conducted ethically with proper authorization. I believe in responsible disclosure to strengthen systems.
+
+                            </p>
+
+                        </div>
+
+                        
+
+                        <div class="bg-gray-900 p-6 rounded-lg glow-box">
+
+                            <div class="flex items-center mb-3">
+
+                                <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+
+                                <h4 class="font-bold">Red Team Experience</h4>
+
+                            </div>
+
+                            <p class="text-gray-300">
+
+                                5+ years simulating sophisticated cyber attacks to test organizational defenses and improve security postures.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="flex flex-wrap gap-4">
+
+                        <a href="#" class="px-4 py-2 bg-gray-900 hover:bg-gray-700 rounded-lg transition glow-box">
+
+                            <i class="fas fa-file-pdf mr-2"></i> Download CV
+
+                        </a>
+
+                        <a href="#contact" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition glow-box">
+
+                            <i class="fas fa-envelope mr-2"></i> Contact Me
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- Skills Section -->
+
+    <section id="skills" class="py-20">
+
+        <div class="container mx-auto px-4">
+
+            <h2 class="text-3xl font-bold mb-12 text-center glow">
+
+                <span class="text-blue-400">#</span> My Arsenal
+
+            </h2>
+
+            
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Skill Card 1 -->
+
+                <div class="bg-gray-800 p-6 rounded-lg glow-box hover:glow transition-all">
+
+                    <div class="flex items-center mb-4">
+
+                        <div class="text-blue-400 text-2xl mr-3">
+
+                            <i class="fas fa-shield-alt"></i>
+
+                        </div>
+
+                        <h3 class="text-xl font-bold">Penetration Testing</h3>
+
+                    </div>
+
+                    <p class="text-gray-300 mb-4">
+
+                        Comprehensive security assessments to identify and exploit vulnerabilities in systems, networks, and applications.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Metasploit</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Burp Suite</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Nmap</span>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Skill Card 2 -->
+
+                <div class="bg-gray-800 p-6 rounded-lg glow-box hover:glow transition-all">
+
+                    <div class="flex items-center mb-4">
+
+                        <div class="text-blue-400 text-2xl mr-3">
+
+                            <i class="fas fa-code"></i>
+
+                        </div>
+
+                        <h3 class="text-xl font-bold">Exploit Development</h3>
+
+                    </div>
+
+                    <p class="text-gray-300 mb-4">
+
+                        Crafting custom exploits for zero-day vulnerabilities and developing proof-of-concept code for security research.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Python</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">C/C++</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Assembly</span>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Skill Card 3 -->
+
+                <div class="bg-gray-800 p-6 rounded-lg glow-box hover:glow transition-all">
+
+                    <div class="flex items-center mb-4">
+
+                        <div class="text-blue-400 text-2xl mr-3">
+
+                            <i class="fas fa-network-wired"></i>
+
+                        </div>
+
+                        <h3 class="text-xl font-bold">Network Security</h3>
+
+                    </div>
+
+                    <p class="text-gray-300 mb-4">
+
+                        Securing network infrastructure, analyzing traffic patterns, and implementing robust defenses against attacks.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Wireshark</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Snort</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Firewalls</span>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Skill Card 4 -->
+
+                <div class="bg-gray-800 p-6 rounded-lg glow-box hover:glow transition-all">
+
+                    <div class="flex items-center mb-4">
+
+                        <div class="text-blue-400 text-2xl mr-3">
+
+                            <i class="fas fa-lock"></i>
+
+                        </div>
+
+                        <h3 class="text-xl font-bold">Cryptography</h3>
+
+                    </div>
+
+                    <p class="text-gray-300 mb-4">
+
+                        Implementing and breaking cryptographic systems, analyzing algorithms, and developing secure communication protocols.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">AES</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">RSA</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">ECC</span>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Skill Card 5 -->
+
+                <div class="bg-gray-800 p-6 rounded-lg glow-box hover:glow transition-all">
+
+                    <div class="flex items-center mb-4">
+
+                        <div class="text-blue-400 text-2xl mr-3">
+
+                            <i class="fas fa-mobile-alt"></i>
+
+                        </div>
+
+                        <h3 class="text-xl font-bold">Mobile Security</h3>
+
+                    </div>
+
+                    <p class="text-gray-300 mb-4">
+
+                        Assessing and securing mobile applications and platforms against reverse engineering and malicious attacks.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Frida</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">JADX</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Burp Suite</span>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Skill Card 6 -->
+
+                <div class="bg-gray-800 p-6 rounded-lg glow-box hover:glow transition-all">
+
+                    <div class="flex items-center mb-4">
+
+                        <div class="text-blue-400 text-2xl mr-3">
+
+                            <i class="fas fa-cloud"></i>
+
+                        </div>
+
+                        <h3 class="text-xl font-bold">Cloud Security</h3>
+
+                    </div>
+
+                    <p class="text-gray-300 mb-4">
+
+                        Securing cloud environments, identifying misconfigurations, and implementing best practices for cloud infrastructure.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">AWS</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">Azure</span>
+
+                        <span class="px-3 py-1 bg-gray-900 rounded-full text-sm">GCP</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- Projects Section -->
+
+    <section id="projects" class="py-20 bg-gray-800">
+
+        <div class="container mx-auto px-4">
+
+            <h2 class="text-3xl font-bold mb-12 text-center glow">
+
+                <span class="text-blue-400">#</span> Noteworthy Engagements
+
+            </h2>
+
+            
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Project 1 -->
+
+                <div class="bg-gray-900 rounded-lg overflow-hidden glow-box hover:glow transition-all">
+
+                    <div class="relative h-64 overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+
+                             alt="Financial Institution Penetration Test" class="w-full h-full object-cover">
+
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="flex justify-between items-center mb-3">
+
+                            <h3 class="text-xl font-bold">Financial Institution Penetration Test</h3>
+
+                            <span class="px-3 py-1 bg-blue-600 rounded-full text-sm">Confidential</span>
+
+                        </div>
+
+                        <p class="text-gray-300 mb-4">
+
+                            Conducted a comprehensive red team engagement for a major financial institution, identifying critical vulnerabilities in their online banking platform that could have led to account takeover.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Web App Security</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">API Security</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Social Engineering</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Project 2 -->
+
+                <div class="bg-gray-900 rounded-lg overflow-hidden glow-box hover:glow transition-all">
+
+                    <div class="relative h-64 overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+
+                             alt="Zero-Day Vulnerability Research" class="w-full h-full object-cover">
+
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="flex justify-between items-center mb-3">
+
+                            <h3 class="text-xl font-bold">Zero-Day Vulnerability Research</h3>
+
+                            <span class="px-3 py-1 bg-blue-600 rounded-full text-sm">Published</span>
+
+                        </div>
+
+                        <p class="text-gray-300 mb-4">
+
+                            Discovered and responsibly disclosed a critical zero-day vulnerability in a widely used enterprise software, coordinating with the vendor to develop a patch before public disclosure.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Reverse Engineering</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Exploit Development</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Responsible Disclosure</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Project 3 -->
+
+                <div class="bg-gray-900 rounded-lg overflow-hidden glow-box hover:glow transition-all">
+
+                    <div class="relative h-64 overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+
+                             alt="IoT Security Assessment" class="w-full h-full object-cover">
+
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="flex justify-between items-center mb-3">
+
+                            <h3 class="text-xl font-bold">IoT Security Assessment</h3>
+
+                            <span class="px-3 py-1 bg-blue-600 rounded-full text-sm">Confidential</span>
+
+                        </div>
+
+                        <p class="text-gray-300 mb-4">
+
+                            Performed a security assessment of a new IoT device, identifying multiple vulnerabilities including insecure firmware updates and weak encryption implementations.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Hardware Hacking</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Firmware Analysis</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Radio Security</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- Project 4 -->
+
+                <div class="bg-gray-900 rounded-lg overflow-hidden glow-box hover:glow transition-all">
+
+                    <div class="relative h-64 overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1620345802265-40e31b9c9f9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+
+                             alt="Security Training Program" class="w-full h-full object-cover">
+
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="flex justify-between items-center mb-3">
+
+                            <h3 class="text-xl font-bold">Security Training Program</h3>
+
+                            <span class="px-3 py-1 bg-blue-600 rounded-full text-sm">Ongoing</span>
+
+                        </div>
+
+                        <p class="text-gray-300 mb-4">
+
+                            Developed and delivered a comprehensive security training program for developers, teaching secure coding practices and common vulnerability patterns.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Secure Coding</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">OWASP Top 10</span>
+
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Training</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="text-center mt-12">
+
+                <button class="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-bold transition glow-box">
+
+                    View More Case Studies
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="py-20">
+
+        <div class="container mx-auto px-4">
+
+            <h2 class="text-3xl font-bold mb-12 text-center glow">
+
+                <span class="text-blue-400">#</span> Secure Contact
+
+            </h2>
+
+            
+
+            <div class="flex flex-col lg:flex-row gap-12">
+
+                <div class="lg:w-1/2">
+
+                    <div class="bg-gray-800 p-8 rounded-lg glow-box">
+
+                        <h3 class="text-2xl font-bold mb-6 text-blue-400">Send an Encrypted Message</h3>
+
+                        
+
+                        <form id="contact-form" class="space-y-6">
+
+                            <div>
+
+                                <label for="name" class="block mb-2">Your Name</label>
+
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                            </div>
+
+                            
+
+                            <div>
+
+                                <label for="email" class="block mb-2">Your Email</label>
+
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                            </div>
+
+                            
+
+                            <div>
+
+                                <label for="subject" class="block mb-2">Subject</label>
+
+                                <select id="subject" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                                    <option value="">Select a subject</option>
+
+                                    <option value="consulting">Security Consulting</option>
+
+                                    <option value="pentest">Penetration Testing</option>
+
+                                    <option value="training">Security Training</option>
+
+                                    <option value="other">Other</option>
+
+                                </select>
+
+                            </div>
+
+                            
+
+                            <div>
+
+                                <label for="message" class="block mb-2">Your Message</label>
+
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+                            </div>
+
+                            
+
+                            <div class="flex items-center">
+
+                                <input type="checkbox" id="encrypt" class="mr-2" checked>
+
+                                <label for="encrypt">Encrypt this message</label>
+
+                            </div>
+
+                            
+
+                            <button type="submit" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold transition glow-box">
+
+                                <i class="fas fa-lock mr-2"></i> Send Securely
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="lg:w-1/2">
+
+                    <div class="bg-gray-800 p-8 rounded-lg glow-box h-full">
+
+                        <h3 class="text-2xl font-bold mb-6 text-blue-400">Contact Information</h3>
+
+                        
+
+                        <div class="space-y-6">
+
+                            <div class="flex items-start">
+
+                                <div class="text-blue-400 text-xl mr-4 mt-1">
+
+                                    <i class="fas fa-envelope"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h4 class="font-bold mb-1">Email</h4>
+
+                                    <p class="text-gray-300">mobilemaestro367@gmail.com</p>
+
+                                    <p class="text-sm text-gray-400">PGP Key available upon request</p>
+
+                                </div>
+
+                            </div>
+
+                            
+
+                            <div class="flex items-start">
+
+                                <div class="text-blue-400 text-xl mr-4 mt-1">
+
+                                    <i class="fas fa-key"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h4 class="font-bold mb-1">Public Key</h4>
+
+                                    <p class="text-gray-300">0x1A2B3C4D5E6F7890</p>
+
+                                    <button class="mt-2 px-3 py-1 bg-gray-900 hover:bg-gray-700 rounded text-sm transition">
+
+                                        Download PGP Key
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            
+
+                            <div class="flex items-start">
+
+                                <div class="text-blue-400 text-xl mr-4 mt-1">
+
+                                    <i class="fas fa-shield-alt"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h4 class="font-bold mb-1">Security Policy</h4>
+
+                                    <p class="text-gray-300 mb-2">All communications are treated with strict confidentiality.</p>
+
+                                    <p class="text-sm text-gray-400">Signed NDAs available for sensitive engagements.</p>
+
+                                </div>
+
+                            </div>
+
+                            
+
+                            <div class="pt-4">
+
+                                <h4 class="font-bold mb-4">Find Me On</h4>
+
+                                <div class="flex space-x-4">
+
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-900 hover:bg-gray-700 rounded-full transition">
+
+                                        <i class="fab fa-github text-xl"></i>
+
+                                    </a>
+
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-900 hover:bg-gray-700 rounded-full transition">
+
+                                        <i class="fab fa-twitter text-xl"></i>
+
+                                    </a>
+
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-900 hover:bg-gray-700 rounded-full transition">
+
+                                        <i class="fab fa-linkedin-in text-xl"></i>
+
+                                    </a>
+
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-900 hover:bg-gray-700 rounded-full transition">
+
+                                        <i class="fab fa-hacker-news text-xl"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- Footer -->
+
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+
+        <div class="container mx-auto px-4">
+
+            <div class="flex flex-col md:flex-row justify-between items-center">
+
+                <div class="mb-6 md:mb-0">
+
+                    <div class="flex items-center space-x-2">
+
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+
+                        <span class="ml-2 text-xl font-bold glow">HCKTCR_</span>
+
+                    </div>
+
+                    <p class="mt-2 text-gray-400">Gray Hat Hacker & Cybersecurity Expert</p>
+
+                </div>
+
+                
+
+                <div class="flex flex-col items-center md:items-end">
+
+                    <p class="text-gray-400 mb-4">
+
+                        © <span id="year"></span> HCKTCR. All rights reserved.
+
+                    </p>
+
+                    <p class="text-sm text-gray-500">
+
+                        This website uses no tracking cookies. Your privacy is respected.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    
+
+    <script>
+
+        // Mobile menu toggle
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+
+            const menu = document.getElementById('mobile-menu');
+
+            menu.classList.toggle('hidden');
+
+        });
+
+        
+
+        // Set current year in footer
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        
+
+        // Terminal typing effect
+
+        const typingTexts = [
+
+            "scan --target corporate-network",
+
+            "exploit --vulnerability CVE-2023-1234",
+
+            "analyze --file suspicious.exe",
+
+            "help --show-commands"
+
+        ];
+
+        
+
+        let textIndex = 0;
+
+        let charIndex = 0;
+
+        let isDeleting = false;
+
+        let typingSpeed = 100;
+
+        
+
+        function typeText() {
+
+            const currentText = typingTexts[textIndex];
+
+            const typingElement = document.getElementById('typing-text');
+
+            
+
+            if (isDeleting) {
+
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                typingSpeed = 50;
+
+            } else {
+
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                typingSpeed = 100;
+
+            }
+
+            
+
+            if (!isDeleting && charIndex === currentText.length) {
+
+                isDeleting = true;
+
+                typingSpeed = 1500; // Pause at end of text
+
+            } else if (isDeleting && charIndex === 0) {
+
+                isDeleting = false;
+
+                textIndex = (textIndex + 1) % typingTexts.length;
+
+                typingSpeed = 500; // Pause before typing next text
+
+            }
+
+            
+
+            setTimeout(typeText, typingSpeed);
+
+        }
+
+        
+
+        // Start typing effect
+
+        setTimeout(typeText, 1000);
+
+        
+
+        // Matrix rain effect
+
+        const canvas = document.getElementById('matrix');
+
+        const ctx = canvas.getContext('2d');
+
+        
+
+        canvas.width = window.innerWidth;
+
+        canvas.height = window.innerHeight;
+
+        
+
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        const nums = '0123456789';
+
+        const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+
+        
+
+        const alphabet = katakana + latin + nums + symbols;
+
+        
+
+        const fontSize = 16;
+
+        const columns = canvas.width / fontSize;
+
+        
+
+        const rainDrops = [];
+
+        
+
+        for (let x = 0; x < columns; x++) {
+
+            rainDrops[x] = 1;
+
+        }
+
+        
+
+        function drawMatrixRain() {
+
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            
+
+            ctx.fillStyle = '#0f0';
+
+            ctx.font = fontSize + 'px monospace';
+
+            
+
+            for (let i = 0; i < rainDrops.length; i++) {
+
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                
+
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+
+                    rainDrops[i] = 0;
+
+                }
+
+                rainDrops[i]++;
+
+            }
+
+        }
+
+        
+
+        setInterval(drawMatrixRain, 30);
+
+        
+
+        // Handle window resize
+
+        window.addEventListener('resize', function() {
+
+            canvas.width = window.innerWidth;
+
+            canvas.height = window.innerHeight;
+
+        });
+
+        
+
+        // Smooth scrolling for anchor links
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                
+
+                const targetId = this.getAttribute('href');
+
+                if (targetId === '#') return;
+
+                
+
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+
+                    window.scrollTo({
+
+                        top: targetElement.offsetTop - 80,
+
+                        behavior: 'smooth'
+
+                    });
+
+                    
+
+                    // Close mobile menu if open
+
+                    const mobileMenu = document.getElementById('mobile-menu');
+
+                    if (!mobileMenu.classList.contains('hidden')) {
+
+                        mobileMenu.classList.add('hidden');
+
+                    }
+
+                }
+
+            });
+
+        });
+
+        
+
+        // Form submission
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            
+
+            // Here you would normally send the form data to a server
+
+            // For this demo, we'll just show an alert
+
+            alert('Message sent securely! (This is a demo - no actual message was sent)');
+
+            
+
+            // Reset form
+
+            this.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+ 
